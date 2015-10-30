@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" method="upgrade" client="site">
+	<name>BT Simple Slideshow</name>
+	<author>BowThemes</author>
+	<creationDate>December 2014</creationDate>
+	<copyright>Copyright © 2014 Bow Themes</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>bowthemes.com</authorEmail>
+	<authorUrl>http://bowthemes.com</authorUrl>
+	<version>1.0.1</version>
+	<description>
+        <![CDATA[
+		<div class="bt_description">
+			<h3>Module BT Simple Slideshow</h3>
+			<a href="http://bowthemes.com" target="_blank"><img src="../modules/mod_bt_simple_slideshow/admin/images/icon.png"></a>
+			<p align="justify">
+                  BT Simple Slideshow is a perfect slideshow module for Joomla and it completely free.
+                  It allows you to easily display images with many animations type and supports responsive website.
+                  You can upload images from local computer or mobile device and fully configure with a lot of options.
+				  The module supports swiping to change slide on mobile devices. 
+                  BT Simple Slideshow is compatible with Joomla 2.5 and Joomla 3.x and almost browser such as: IE9+, Firefox, Chrome...
+			</p>
+			<br clear="both" />
+			<h3>Extension features:</h3>
+			<ul class="list-style">
+				<li>Drag and drop or choose up to 10 images to upload per time</li>
+				<li>Enable drag images to sort them</li>
+				<li>Can change image and thumbnail's size with cropping function</li>
+				<li>Easiness to insert images' link, caption and description</li>
+				<li>Fully responsive and support images in different ratio</li>
+				<li>Support swiping to change image on mobile device</li>
+				<li>Be compatible with Joomla 2.5 and Joomla 3.x</li>
+				<li>Cross Browser Support: IE9+, Firefox 2+, Safari 3+, Chrome 8+, Opera 9+</li>
+			</ul>
+			<h3>Upgrade versions</h3>
+			<p>
+				Your current versions is BT Simple Slideshow 1.0.1. <a target="_blank" href="http://bowthemes.com/showcase/joomla-extensions.html">Find our latest versions now</a>
+			</p>
+			<h3>About bow themes & copyright</h3>	
+			<p>
+				Bow Themes is Professional Joomla template provider. We are focused on creating unique, attractive and clean templates without loosing flexibility and simplicity of customization
+			</p>
+			Copyright (C) 2014 BowThemes	
+		</div>
+		<style>
+			.bt_description{
+				text-align: left;
+			}
+			.bt_description h3{
+				text-transform: uppercase;
+				margin: 20px 0px 10px 0px;
+			}
+			.bt_description img{
+				float:left;
+				margin:5px 10px 5px 0px;
+			}
+			.bt_description p,.bt_description li{
+				padding: 5px 5px 5px 30px;
+				list-style: none outside none;
+			}
+
+			.bt_description ul.list-style li{
+				background:url(../modules/mod_bt_simple_slideshow/admin/images/tick.png) 0px 6px no-repeat;
+				padding-left:30px;
+				line-height:15px;
+			}
+		</style>
+	]]>
+	</description>
+	<files>
+		<filename module="mod_bt_simple_slideshow">mod_bt_simple_slideshow.php</filename>
+		<folder>admin</folder>
+		<folder>helpers</folder>
+		<folder>images</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB.mod_bt_simple_slideshow.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" label="FIELDSET_GALLERY_MANAGER">
+				<field type="html5upload" name="upload" class="gallery-option source_upload" label="UPLOAD" description="UPLOAD_DESC" />
+				<field name="gallery" type="gallery" default=""
+					label="GALLERY" description="GALLERY_DESC" filter="raw"/>
+				<field name="deleteimages" type="deleteimages" label="Delete images" />				
+			</fieldset>
+			
+			<fieldset name="config" label="SLIDESHOW_CONFIGURATION">
+				<field name="module_width" type="text" default="auto" label="MODULE_WIDTH" description="MODULE_WIDTH_DESC"/>
+				<field name="module_height" type="text" default="50%" label="MODULE_HEIGHT" description="MODULE_HEIGHT_DESC"/>
+				<field name="crop_image" class="btn-group" type="radio"
+					default="0" label="CROP_IMAGE"
+					description="CROP_IMAGE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="jpeg_compression" type="text" size="9" default="80" label="JPEG_COMPRESSION" description="JPEG_COMPRESSION_DESC" />
+				<field name="crop_width" type="text" label="CROP_WIDTH" description="CROP_WIDTH_DESC" default="800" />
+				<field name="crop_height" type="text" label="CROP_HEIGHT" description="CROP_HEIGHT_DESC" default="400" />
+				<field name="thumbnail_width" type="text" size="9" default="100" label="THUMB_WIDTH" description="THUMB_WIDTH_DESC" />
+                <field name="thumbnail_height" type="text" size="9" default="50" label="THUMB_HEIGHT" description="THUMB_HEIGHT_DESC" />
+				<field name="show_caption" type="radio" default="1" class="btn-group" label="SHOW_CAPTION" description="SHOW_CAPTION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="navigation" type="radio" default="1" class="btn-group" label="SHOW_NAVIGATION" description="SHOW_NAVIGATION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="pagination" type="radio" default="1" class="btn-group" label="SHOW_PAGINATION" description="SHOW_PAGINATION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="pagination_thumbnail" default="1" type="radio" class="btn-group" label="SHOW_PAGINATION_THUMBNAIL" description="SHOW_PAGINATION_THUMBNAIL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="autoplay" type="radio" default="1" class="btn-group" label="AUTOPLAY" description="AUTOPLAY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="interval" type="text" default="3000" label="INTERVAL" description="INTERVAL_DESC"/>
+				<field name="effect" default="scrollLeft" type="list" multiple="true" label="EFFECT" description="EFFECT_DESC">
+					<option value="random">random</option>
+					<option value="simpleFade">simpleFade</option>
+					<option value="scrollLeft">scrollLeft</option>
+					<option value="scrollRight">scrollRight</option>
+					<option value="scrollHorz">scrollHorz</option>
+					<option value="scrollBottom">scrollBottom</option>
+					<option value="scrollTop">scrollTop</option>
+				</field>
+				<field name="effect_duration" type="text" default="1500" label="EFFECT_DURATION" description="EFFECT_DURATION_DESC"/>
+				<field name="pause_on_hover" type="radio" class="btn-group" default="0" label="PAUSE_ON_HOVER" description="PAUSE_ON_HOVER_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="portrait" type="radio" default="1" class="btn-group" label="PORTRAIT" description="PORTRAIT_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="MODULE_CLASS_SUFFIX"
+					description="MODULECLASS_SFX_DESC" />
+				<field name="load_jquery" class="btn-group" type="radio"
+					default="" label="LOAD_JQUERY"
+					description="LOAD_JQUERY_DESC">
+					<option value="">Auto</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>	
+				
+				
+				
+				<field type="asset" name="asset" addfieldpath="/modules/mod_bt_simple_slideshow/admin/formfields" path="modules/mod_bt_simple_slideshow/admin/" />
+				<field type="ajax" name="ajax"/>        
+			</fieldset>
+		</fields>
+
+	</config>
+
+</extension>
